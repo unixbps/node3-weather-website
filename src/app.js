@@ -5,6 +5,9 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 
+// Getting port from heroku
+const port = process.env.PORT || 3000
+
 //app.com -- root directory/page
 //app.com/help
 //app.com/about
@@ -252,6 +255,6 @@ app.get('*', (req,res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port' + port)
 })
